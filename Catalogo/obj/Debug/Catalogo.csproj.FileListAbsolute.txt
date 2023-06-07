@@ -1,0 +1,11 @@
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\bin\Debug\Catalogo.exe.config
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\bin\Debug\Catalogo.exe
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\bin\Debug\Catalogo.pdb
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.csproj.AssemblyReference.cache
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.Form1.resources
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.Properties.Resources.resources
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.csproj.GenerateResource.cache
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.csproj.CoreCompileInputs.cache
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.exe
+C:\Users\Johnniew\source\repos\Catalogo\Catalogo\obj\Debug\Catalogo.pdb
