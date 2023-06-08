@@ -1,6 +1,6 @@
 ﻿namespace Catalogo
 {
-    partial class Form1
+    partial class Catalogo
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo));
             this.txtarchivo = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.btnexaminar = new System.Windows.Forms.Button();
@@ -64,11 +65,11 @@
             this.btncambiar.Name = "btncambiar";
             this.btncambiar.Size = new System.Drawing.Size(105, 20);
             this.btncambiar.TabIndex = 3;
-            this.btncambiar.Text = "Examinar";
+            this.btncambiar.Text = "Generar";
             this.btncambiar.UseVisualStyleBackColor = true;
             this.btncambiar.Click += new System.EventHandler(this.btncambiar_Click);
             // 
-            // Form1
+            // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,8 +78,9 @@
             this.Controls.Add(this.btnexaminar);
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.txtarchivo);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Catalogo";
+            this.Text = "Catálogos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
