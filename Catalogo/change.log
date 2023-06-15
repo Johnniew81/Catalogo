@@ -1,5 +1,9 @@
 ﻿AppCatalogo
 
+Versión 0.0.2
+
+	- Se agrega que si no pones nombre te coge el del pdf.
+
 Versión 0.0.1
 
 	- Funcionalidad para cambiar y crear el archivo php para los catálogos.

@@ -6,7 +6,7 @@ namespace Catalogo
 {
     public partial class Catalogo : Form
     {
-        string ruta1,ruta2,rutaphp,ruta,sinenom;
+        string ruta1,ruta2,rutaphp,ruta,sinenom,nom;
         public Catalogo()
         {
             InitializeComponent();            
@@ -19,30 +19,26 @@ namespace Catalogo
             ruta2 = ruta+"\\";
             ruta2 += sinenom;
             ruta2 += ".pdf";
-            if (string.IsNullOrEmpty(txtnombre.Text))
-            {
-                MessageBox.Show("Nombre de archivo vacío", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else { 
-                if (File.Exists(ruta1)) {                    
-                    File.Move(ruta1, ruta2);
-                    rutaphp = ruta + "\\" + sinenom + ".php";
-                    using (StreamWriter php = File.CreateText(rutaphp))
-                    {
-                        php.WriteLine("<?php");
-                        php.WriteLine("header('Content-type: application/pdf');");
-                        php.WriteLine("header('Content-Disposition: inline; filename=documento.pdf');");
-                        php.WriteLine("readfile('"+ sinenom + ".pdf');");
-                        php.WriteLine("?>");
-                    }
-                    resetear();
-                    MessageBox.Show("Trabajo realizado");
-                }
-                else
+            
+            if (File.Exists(ruta1)) {                    
+                File.Move(ruta1, ruta2);
+                rutaphp = ruta + "\\" + sinenom + ".php";
+                using (StreamWriter php = File.CreateText(rutaphp))
                 {
-                    MessageBox.Show("Ruta de archivo vacía", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    php.WriteLine("<?php");
+                    php.WriteLine("header('Content-type: application/pdf');");
+                    php.WriteLine("header('Content-Disposition: inline; filename=documento.pdf');");
+                    php.WriteLine("readfile('"+ sinenom + ".pdf');");
+                    php.WriteLine("?>");
                 }
+                 resetear();
+                 MessageBox.Show("Trabajo realizado");
             }
+            else
+            {
+                MessageBox.Show("Ruta de archivo vacía", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void btnexaminar_Click(object sender, EventArgs e)
@@ -52,7 +48,8 @@ namespace Catalogo
             if (catalogo.ShowDialog() == DialogResult.OK) { 
                 txtarchivo.Text = catalogo.FileName;
                 ruta = Path.GetDirectoryName(catalogo.FileName);
-            }
+                nom = Path.GetFileName(catalogo.FileName).Replace(".pdf","");
+            }            
         }
         private void resetear()
         {
@@ -61,8 +58,15 @@ namespace Catalogo
         }
         private void nombrese()
         {
-            sinenom = txtnombre.Text;
-            sinenom = sinenom.Replace(" ", "-");
+            if (string.IsNullOrEmpty(txtnombre.Text))
+            {
+                sinenom = nom;
+            }
+            else
+            {
+                sinenom = txtnombre.Text;
+                sinenom = sinenom.Replace(" ", "-");
+            }
         }
     }
 }
